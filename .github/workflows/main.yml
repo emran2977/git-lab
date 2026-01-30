@@ -17,9 +17,9 @@ jobs:
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/ec2_key
+          echo "${{ secrets.CICD.pem }}" > ~/.ssh/ec2_key
           chmod 600 ~/.ssh/ec2_key
-          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.13.233.207.28 }} >> ~/.ssh/known_hosts
       
       - name: Test EC2 Connectivity
         run: |
