@@ -1,0 +1,24 @@
+name: my test workflow
+
+on:
+ push:
+   branch:
+     -main
+
+jobs:
+  name: test workflows
+  runs-on:ubuntu-latest
+
+steps:
+  uses:actions/checkout@v4
+  with:
+    host: ${{secrets.EC2}}
+    username: ${{secrets.EC2_USER}}
+    password: ${{secrets.PASSWORD}}
+    port: ${{secrets.PORT}}
+  run:
+   mkdir ~/etc/test
+   script:cd /etc/test
+          touch test.conf
+          
+   
