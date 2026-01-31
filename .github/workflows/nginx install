@@ -19,5 +19,5 @@ steps:
     username: ${{secrets.EC2_USER}}
     password: ${{secrets.PASSWORD}}
     port: ${{secrets.PORT}}
-    script:apt upadate && apt upgrade && apt install nginx
+    script: sudo apt upadate && apt upgrade && apt install nginx
 
