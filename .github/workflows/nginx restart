@@ -1,0 +1,20 @@
+name: nginx restart
+
+on:
+ push:
+   branch:
+     -main
+
+jobs:
+  name: nginx restart
+  runs on:ubuntu-latest
+
+steps:
+  -name: nginx restart
+   uses: actions/checkout@v4
+   with:
+     host:${{secrets.EC2}}
+     username:${{secrets.EC2_USER}}
+     password:${{secrets.PASSWORD}}
+     port:${{secrets.PORT}}
+     script:systemctl restart nginx
