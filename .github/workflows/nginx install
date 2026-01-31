@@ -1,0 +1,23 @@
+Name:My Test Workflows
+
+
+on:
+ push:
+   branch:
+     -main
+
+
+jobs:
+  apt update and nginx install:
+    name: os update and nginx install
+      runs on: ubuntu-latest
+steps:
+ -name: checkout repository
+  uses:actions/checkout@v4
+  with:
+    host: ${{secrets.EC2}}
+    username: ${{secrets.EC2_USER}}
+    password: ${{secrets.PASSWORD}}
+    port: ${{secrets.PORT}}
+    script:apt upadate && apt upgrade && apt install nginx
+
