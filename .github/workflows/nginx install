@@ -13,11 +13,11 @@ jobs:
       runs on: ubuntu-latest
 steps:
  -name: checkout repository
-  uses:actions/checkout@v4
+  uses:appleboy/ssh-action
   with:
     host: ${{secrets.EC2}}
     username: ${{secrets.EC2_USER}}
     password: ${{secrets.PASSWORD}}
     port: ${{secrets.PORT}}
-    script: sudo apt upadate && apt upgrade && apt install nginx
+    script: sudo apt update && apt upgrade && apt install nginx
 
