@@ -19,8 +19,9 @@ steps:
     username: ${{secrets.EC2_USER}}
     password: ${{secrets.PASSWORD}}
     port: ${{secrets.PORT}}
-    script: sudo apt update -y
+    script:  |
+            sudo apt update -y
             sudo apt install nginx -y
-            systemctl start nginx
-            systemctl enable nginx
+            sudo systemctl restart nginx
+            sudo systemctl enable nginx
 
