@@ -19,9 +19,8 @@ steps:
     username: ${{secrets.EC2_USER}}
     password: ${{secrets.PASSWORD}}
     port: ${{secrets.PORT}}
-    script:  |
-            sudo apt update -y
-            sudo apt install nginx -y
-            sudo systemctl restart nginx
-            sudo systemctl enable nginx
+    script: |
+            echo "GitHub Actions connected at $(date)" > ~/github_test.txt
+            mkdir -p ~/test_folder
+            ls -la ~
 
