@@ -1,4 +1,4 @@
-name: Deploy HAProxy to EC2
+name: Deploy HA to EC2
 
 on:
   push:
