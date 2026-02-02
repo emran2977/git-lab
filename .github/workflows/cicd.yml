@@ -12,16 +12,16 @@ jobs:
 
 steps:
   -name:checkout EC2
-  uses:actions/checkout@v4
+   uses:actions/checkout@v4
 
   -name:connect EC2 with ssh
-  uses:appleboy/ssh-action@v1.0.3
+   uses:appleboy/ssh-action@v1.0.3
 
   with:
-   host:${{secrtes.EC2}}
-   username:${{secrets.EC2_USER}}
-   key:${{secrtes.KEY}}
-   port:22
+   host: ${{secrtes.EC2}}
+   username: ${{secrets.EC2_USER}}
+   key: ${{secrtes.KEY}}
+   port: 22
 
    script: |
      sudo apt update -y
