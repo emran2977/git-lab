@@ -18,9 +18,9 @@ steps:
    uses:appleboy/ssh-action@v1.0.3
 
   with:
-   host: ${{secrtes.EC2}}
+   host: ${{secrets.EC2}}
    username: ${{secrets.EC2_USER}}
-   key: ${{secrtes.KEY}}
+   key: ${{secrets.KEY}}
    port: 22
 
    script: |
