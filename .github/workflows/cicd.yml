@@ -1,21 +1,21 @@
 Name: Nginx install on EC2
 
 on:
- push:
-   branch:
-     -main
+  push:
+     branches:
+         -main
 
 jobs:
   deploy:
     name: Install nginx service on EC2
-    runs-on:ubuntu-latest
+    runs-on: ubuntu-latest
 
 steps:
-  -name:checkout EC2
-   uses:actions/checkout@v4
+  -name: checkout EC2
+   uses: actions/checkout@v4
 
-  -name:connect EC2 with ssh
-   uses:appleboy/ssh-action@v1.0.3
+  -name: connect EC2 with ssh
+   uses: appleboy/ssh-action@v1.0.3
 
   with:
    host: ${{secrets.EC2}}
