@@ -26,8 +26,8 @@ steps:
    script: |
      sudo apt update -y
      sudo apt install nginx -y
-     sudo restart nginx
-     sudo enable nginx
+     sudo systemctl restart nginx
+     sudo systemctl enable nginx
     
   
     
